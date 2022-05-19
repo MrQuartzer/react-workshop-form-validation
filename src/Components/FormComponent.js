@@ -10,7 +10,7 @@ const FormComponent = () =>{
     const [errorUserName,setErrorUserName] = useState('')
     const [erroremail,setErrorEmail] = useState('')
     const [errorpassword,setErrorPassword] = useState('')
-    const [errorconfirmPassword,setErrorConfirmPassword] = useState('รหัสผ่านไม่ตรงกัน')
+    const [errorconfirmPassword,setErrorConfirmPassword] = useState('')
 
     const [userNameColor,setUserNameColor] = useState('') 
     const [emailColor,setEmailColor] = useState('')
@@ -29,7 +29,7 @@ const FormComponent = () =>{
         }
 
         if(email.includes('@')){
-            setEmail('')
+            setErrorEmail('')
             setEmailColor('green')
         }else{
             setErrorEmail('รูปแบบอีเมลไม่ถูกต้อง')
@@ -42,6 +42,14 @@ const FormComponent = () =>{
         }else{
             setErrorPassword('รหัสผ่านต้องมีจำนวน 8 ตัวอักษร')
             setPasswordColor('red')
+        }
+
+        if(confirmPassword !== "" && confirmPassword===password){
+            setErrorConfirmPassword('')
+            setConfirmPasswordColor('green')
+        }else{
+            setErrorConfirmPassword('รหัสผ่านไม่ตรงกัน')
+            setConfirmPasswordColor('red')
         }
     }
 
