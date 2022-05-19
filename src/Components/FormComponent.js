@@ -7,6 +7,11 @@ const FormComponent = () =>{
     const [password,setPassword] = useState('')
     const [confirmPassword,setConfirmPassword] = useState('')
 
+    const [errorUserName,setErrorUserName] = useState('กรุณาป้อนชื่อผู้ใช้จำนวน 8 ตัวอักษร')
+    const [erroremail,setErrorEmail] = useState('รูปแบบอีเมลไม่ถูกต้อง')
+    const [errorpassword,setErrorPassword] = useState('รหัสผ่านต้องมีจำนวน 8 ตัวอักษร')
+    const [errorconfirmPassword,setErrorConfirmPassword] = useState('รหัสผ่านไม่ตรงกัน')
+
     return(
         <div className="Container">
             <form className="Form">
@@ -14,22 +19,22 @@ const FormComponent = () =>{
                 <div className="Form-Control">
                     <label>ชื่อผู้ใช้</label>
                     <input type="text" value={userName} onChange={(e)=>setUserName(e.target.value)}></input>
-                    <small>error message</small>
+                    <small>{errorUserName}</small>
                 </div>
                 <div className="Form-Control">
                     <label>อีเมล</label>
                     <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)}></input>
-                    <small>error message</small>
+                    <small>{erroremail}</small>
                 </div>
                 <div className="Form-Control">
                     <label>รหัสผ่าน</label>
                     <input type="text" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
-                    <small>error message</small>
+                    <small>{errorpassword}</small>
                 </div>
                 <div className="Form-Control">
                     <label>ยืนยันรหัสผ่าน</label>
                     <input type="text" value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)}></input>
-                    <small>error message</small>
+                    <small>{errorconfirmPassword}</small>
                 </div>
                 <button type="submit">ลงทะเบียน</button>
             </form>
