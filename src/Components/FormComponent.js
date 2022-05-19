@@ -7,14 +7,36 @@ const FormComponent = () =>{
     const [password,setPassword] = useState('')
     const [confirmPassword,setConfirmPassword] = useState('')
 
-    const [errorUserName,setErrorUserName] = useState('กรุณาป้อนชื่อผู้ใช้จำนวน 8 ตัวอักษร')
-    const [erroremail,setErrorEmail] = useState('รูปแบบอีเมลไม่ถูกต้อง')
-    const [errorpassword,setErrorPassword] = useState('รหัสผ่านต้องมีจำนวน 8 ตัวอักษร')
+    const [errorUserName,setErrorUserName] = useState('')
+    const [erroremail,setErrorEmail] = useState('')
+    const [errorpassword,setErrorPassword] = useState('')
     const [errorconfirmPassword,setErrorConfirmPassword] = useState('รหัสผ่านไม่ตรงกัน')
+
+    const validateForm = (e)=>{
+        e.preventDefault()
+
+        if(userName.length>8){
+            setErrorUserName('')
+        }else{
+            setErrorUserName('ป้อนชื่อผู้ใช้จำนวนมากกว่า 8 ตัวอักษร')
+        }
+
+        if(email.includes('@')){
+            setEmail('')
+        }else{
+            setErrorEmail('รูปแบบอีเมลไม่ถูกต้อง')
+        }
+
+        if(password.length>8){
+            setErrorPassword('')
+        }else{
+            setErrorPassword('รหัสผ่านต้องมีจำนวน 8 ตัวอักษร')
+        }
+    }
 
     return(
         <div className="Container">
-            <form className="Form">
+            <form className="Form" onSubmit={validateForm}>
                 <h2>แบบฟอร์มลงทะเบียน</h2>
                 <div className="Form-Control">
                     <label>ชื่อผู้ใช้</label>
