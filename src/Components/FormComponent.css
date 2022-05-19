@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    background: whitesmoke;
+}
+
+.Container{
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px black;
+    width: 400px;
+}
+
+.Form{
+    padding: 10px 40px;
+}
+
+h2{
+    text-align: center;
+    margin: 0 0 20px 20px;
+}
+
+.Form-Control{
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+.Form-Control label{
+    display: block;
+    margin-bottom: 5px;
+}
+.Form-Control input{
+    display: block;
+    border: 2px solid gray;
+    border-radius: 4px;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+}
+.Form-Control input:focus{
+    outline: none;
+}
+
+.Form button{
+    background: deepskyblue;
+    cursor: pointer;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+    border: 2px solid deepskyblue;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+}
